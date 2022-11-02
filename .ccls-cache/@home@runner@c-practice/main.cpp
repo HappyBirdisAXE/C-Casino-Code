@@ -76,6 +76,28 @@ int main()
           case 3:
             Playing = false;
           break;
+
+          default:
+            Menu::PrintGuesspPomptDie();
+            cin >> GuessNumber;
+            Menu::PrintBetPrompt();
+            cin >> BetAmount;
+            
+            Player.PlaceBets(BetAmount);
+            DiceNumber = Dice::RollDie();
+
+            cout << "Die landed on: " << DiceNumber << endl;
+
+            if(GuessNumber == DiceNumber)
+              Correct = true;
+            else
+              Correct = false;
+
+            if(Correct)
+              Player.AddChips();
+            else
+              Player.RemoveChips();
+          break;
         }
 
       if(Player.ChipAmount() <= 0)
