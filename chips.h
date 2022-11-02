@@ -11,9 +11,7 @@ class Chips
 
   public:
   Chips(int UserChips) : ChipsAmount(UserChips) 
-  {
-    std::cout << "User's chips: " << ChipsAmount << std::endl;
-  };
+  {};
 
   public:
   void PlaceBets(int Amount)
@@ -23,12 +21,19 @@ class Chips
 
   void AddChips() 
   {
+    std::cout << "Added to your balance: " << BetAmount << std::endl;
     this->ChipsAmount += BetAmount;
   }
 
   void RemoveChips() 
   {
+    std::cout << "Subtracting from your balance: " << BetAmount << std::endl;
     this->ChipsAmount -= BetAmount;
+  }
+
+  int ChipAmount()
+  {
+    return ChipsAmount;
   }
 };
 
