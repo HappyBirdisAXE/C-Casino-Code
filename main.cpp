@@ -1,5 +1,4 @@
 #include <iostream>
-#include <random>
 
 #include "dice.h"
 #include "chips.h"
