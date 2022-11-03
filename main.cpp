@@ -19,7 +19,7 @@ int main()
   bool Correct = false;
   bool Playing = true;
 
-  Chips Player = Chips(100);
+  Chips Player = Chips(1000);
   
   do
     {
