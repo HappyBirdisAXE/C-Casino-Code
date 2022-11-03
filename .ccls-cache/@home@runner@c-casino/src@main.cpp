@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "header/dice.h"
-#include "header/chips.h"
-#include "header/menu.h"
-#include "header/gennumber.h"
+#include "dice.h"
+#include "chips.h"
+#include "menu.h"
+#include "gennumber.h"
 
 using namespace std;
 
