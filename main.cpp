@@ -3,11 +3,14 @@
 #include "dice.h"
 #include "chips.h"
 #include "menu.h"
+#include "gennumber.h"
 
 using namespace std;
 
 int main()
 {
+  system("clear"); // Clear Console
+  /////////////////////////////////
   int GuessNumber = 0;
   int DiceNumber = 0;
   int BetAmount = 0;
@@ -17,12 +20,10 @@ int main()
   bool Playing = true;
 
   Chips Player = Chips(100);
-
-  system("clear");
   
   do
     {
-      cout << "Player: " << Player.ChipAmount() << endl;
+      cout << "Player's chips: " << Player.ChipAmount() << endl;
       Menu::PrintMenu();
       cin >> Option;
 
@@ -33,6 +34,13 @@ int main()
             cin >> GuessNumber;
             Menu::PrintBetPrompt();
             cin >> BetAmount;
+
+            if(GuessNumber < 1 || GuessNumber > 6)
+            {
+              GuessNumber = Generate::GenerateGuessDie();
+              cout << "Your guess number was bigger than the numbers of sides on the dice. \n" <<
+                "Generating a new number: " << GuessNumber << endl;
+            }
             
             Player.PlaceBets(BetAmount);
             DiceNumber = Dice::RollDie();
@@ -55,6 +63,13 @@ int main()
             cin >> GuessNumber;
             Menu::PrintBetPrompt();
             cin >> BetAmount;
+
+            if(GuessNumber < 2 || GuessNumber > 12)
+            {
+              GuessNumber = Generate::GenerateGuessDouble();
+              cout << "Your guess number was bigger than the numbers of sides on the dice. \n" <<
+                "Generating a new number: " << GuessNumber << endl;
+            }
             
             Player.PlaceBets(BetAmount);
             DiceNumber = Dice::DoubleRoll();
