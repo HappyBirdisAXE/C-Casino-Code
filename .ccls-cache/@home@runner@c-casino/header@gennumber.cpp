@@ -1,11 +1,8 @@
-#ifndef DICE_HPP
-#define DICE_HPP
+#include "gennumber.hpp"
+
 #include <random>
 
-class Dice
-{
-public:
-  static int RollDie()
+int Generate::GenerateGuessDie()
   {
     int ReturnValue;
     
@@ -18,7 +15,7 @@ public:
     return ReturnValue;
   }
 
-  static int DoubleRoll()
+int Generate::GenerateGuessDouble()
   {
     int ReturnValue;
     
@@ -30,5 +27,3 @@ public:
 
     return ReturnValue;
   }
-};
-#endif

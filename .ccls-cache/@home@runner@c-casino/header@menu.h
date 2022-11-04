@@ -3,36 +3,14 @@
 
 #include <iostream>
 
-class Menu
+struct Menu
 {
-public:
-  static void PrintMenu()
-  {
-    std::cout << 
-      "/////////////////////\n" <<
-      "1. Roll Dice\n" <<
-      "2. Double Roll\n" <<
-      "3. End Program\n" <<
-      "/////////////////////\n";
-  }
+  static void PrintMenu();
 
-  static void PrintGuesspPomptDie()
-  {
-    system("clear");
-    std::cout << "Enter your guess (1-6): ";
-  }
+  static void PrintGuesspPomptDie();
 
-  static void PrintGuesspPomptDouble()
-  {
-    system("clear");
-    std::cout << "Enter your guess (2-12): ";
-  }
+  static void PrintGuesspPomptDouble();
 
-  static void PrintBetPrompt()
-  {
-    system("clear");
-    std::cout << "Enter your bet: ";
-    system("clear");
-  }
+  static void PrintBetPrompt();
 };
 #endif

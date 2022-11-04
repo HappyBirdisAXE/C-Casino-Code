@@ -1,12 +1,8 @@
-#ifndef GENNUMBER_H
-#define GENNUMBER_H
+#include "gennumber.hpp"
 
 #include <random>
 
-class Generate
-{
-  public:
-  static int GenerateGuessDie()
+int Generate::GenerateGuessDie()
   {
     int ReturnValue;
     
@@ -19,7 +15,7 @@ class Generate
     return ReturnValue;
   }
 
-  static int GenerateGuessDouble()
+int Generate::GenerateGuessDouble()
   {
     int ReturnValue;
     
@@ -31,5 +27,3 @@ class Generate
 
     return ReturnValue;
   }
-};
-#endif
